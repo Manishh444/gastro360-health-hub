@@ -29,7 +29,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative">
+    <section id="home" className="relative">
       {/* Hero Image Background */}
       <div 
         className="relative min-h-[600px] bg-cover bg-center bg-no-repeat"

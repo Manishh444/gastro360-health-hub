@@ -1,21 +1,30 @@
 import { useState } from "react";
-import { Menu, X, User } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import GalleryCarousel from "@/components/GalleryCarousel";
 import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    "HOME",
-    "ABOUT US", 
-    "GALLERY",
-    "TESTIMONIALS",
-    "SAFE ENDOSCOPY",
-    "GASTROENTEROLOGY",
-    "HEPATOLOGY",
-    "More"
+    { label: "HOME", href: "#home" },
+    { label: "ABOUT US", href: "#about" }, 
+    { label: "SERVICES", href: "#services" },
+    { label: "TESTIMONIALS", href: "#testimonials" },
   ];
+
+  const scrollToSection = (href: string) => {
+    if (href === "#home") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
@@ -39,28 +48,35 @@ const Navigation = () => {
             <div className="flex items-center bg-medical-green-light/20 rounded-full px-2 py-1">
               {navItems.map((item, index) => (
                 <Button
-                  key={item}
+                  key={item.label}
                   variant={index === 0 ? "default" : "ghost"}
                   size="sm"
+                  onClick={() => scrollToSection(item.href)}
                   className={`${
                     index === 0 
                       ? "bg-medical-green text-white hover:bg-medical-green-dark" 
                       : "text-foreground hover:text-medical-green hover:bg-medical-green/10"
-                  } rounded-full px-4 py-2 text-sm font-medium transition-all`}
+                  } rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer`}
                 >
-                  {item}
+                  {item.label}
                 </Button>
               ))}
+              <GalleryCarousel 
+                trigger={
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer"
+                  >
+                    GALLERY
+                  </Button>
+                }
+              />
             </div>
           </div>
 
-          {/* Login Button & Mobile Menu */}
+          {/* Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <Button variant="outline" className="hidden md:flex items-center gap-2 border-medical-green text-medical-green hover:bg-medical-green hover:text-white">
-              <User className="w-4 h-4" />
-              Log In
-            </Button>
-            
             <Button
               variant="ghost"
               size="sm"
@@ -78,21 +94,28 @@ const Navigation = () => {
             <div className="flex flex-col space-y-2 mt-4">
               {navItems.map((item, index) => (
                 <Button
-                  key={item}
+                  key={item.label}
                   variant={index === 0 ? "default" : "ghost"}
+                  onClick={() => scrollToSection(item.href)}
                   className={`${
                     index === 0 
                       ? "bg-medical-green text-white hover:bg-medical-green-dark" 
                       : "text-foreground hover:text-medical-green hover:bg-medical-green/10"
-                  } justify-start`}
+                  } justify-start cursor-pointer`}
                 >
-                  {item}
+                  {item.label}
                 </Button>
               ))}
-              <Button variant="outline" className="flex items-center gap-2 justify-start border-medical-green text-medical-green hover:bg-medical-green hover:text-white mt-4">
-                <User className="w-4 h-4" />
-                Log In
-              </Button>
+              <GalleryCarousel 
+                trigger={
+                  <Button
+                    variant="ghost"
+                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 justify-start cursor-pointer"
+                  >
+                    GALLERY
+                  </Button>
+                }
+              />
             </div>
           </div>
         )}

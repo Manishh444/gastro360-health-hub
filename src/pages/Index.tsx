@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import WhyGastro360 from "@/components/WhyGastro360";
 import ServicesSection from "@/components/ServicesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -12,8 +14,10 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
+        <AboutSection />
         <WhyGastro360 />
         <ServicesSection />
+        <TestimonialsSection />
       </main>
       <Footer />
     </div>
