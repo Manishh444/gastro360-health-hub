@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GalleryCarousel from "@/components/GalleryCarousel";
-import logo from "@/assets/logo1.jpg";
+import logo from "@/assets/Logo2.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,7 +54,7 @@ const Navigation = () => {
             <img
               src={logo}
               alt="S L Gastro & Liver Clinic Logo"
-              className="w-16 h-8"
+              className="w-16 h-16"
             />
             <div>
               <h1 className="text-2xl font-bold text-foreground">

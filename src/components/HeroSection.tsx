@@ -11,7 +11,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Calendar, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/hero-doctor.jpg";
+import heroImage from "@/assets/heroimg.png";
 import endoscopyIcon from "@/assets/endoscopy-icon.png";
 import liverIcon from "@/assets/liver-icon.png";
 import safetyIcon from "@/assets/safety-icon.png";
