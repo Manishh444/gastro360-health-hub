@@ -1,10 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { Calendar, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-doctor.jpg";
 import endoscopyIcon from "@/assets/endoscopy-icon.png";
 import liverIcon from "@/assets/liver-icon.png";
 import safetyIcon from "@/assets/safety-icon.png";
+
+import React, { useState } from "react";
 
 const HeroSection = () => {
   const services = [
@@ -12,21 +24,24 @@ const HeroSection = () => {
       title: "Gastroenterology",
       description: "Your one stop solution for Digestive problems",
       icon: endoscopyIcon,
-      color: "bg-medical-green"
+      color: "bg-medical-green",
     },
     {
-      title: "Hepatology", 
+      title: "Hepatology",
       description: "Your one stop solution for Liver and Pancreatic problems",
       icon: liverIcon,
-      color: "bg-medical-green-light"
+      color: "bg-medical-green-light",
     },
     {
       title: "Safe Endoscopy",
-      description: "Procedures are done with high disinfection to prevent COVID spread", 
+      description:
+        "Procedures are done with high disinfection to prevent COVID spread",
       icon: safetyIcon,
-      color: "bg-medical-accent"
-    }
+      color: "bg-medical-accent",
+    },
   ];
+
+  const [openService, setOpenService] = useState<number | null>(null);
 
   return (
     <section id="home" className="relative">
@@ -77,32 +92,54 @@ const HeroSection = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <Card
-                key={index}
-                className="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
-                <div className="flex items-start space-x-4">
-                  <div className={`p-3 rounded-full ${service.color}`}>
-                    <img
-                      src={service.icon}
-                      alt={service.title}
-                      className="w-8 h-8"
-                    />
+              <React.Fragment key={index}>
+                <Card className="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                  <div className="flex items-start space-x-4">
+                    <div className={`p-3 rounded-full ${service.color}`}>
+                      <img
+                        src={service.icon}
+                        alt={service.title}
+                        className="w-8 h-8"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        {service.description}
+                      </p>
+                      <Dialog
+                        open={openService === index}
+                        onOpenChange={(open) =>
+                          setOpenService(open ? index : null)
+                        }>
+                        <DialogTrigger asChild>
+                          <Button
+                            variant="link"
+                            className="text-medical-green hover:text-medical-green-dark p-0">
+                            Read More →
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>{service.title}</DialogTitle>
+                            <DialogDescription>
+                              {service.description}
+                            </DialogDescription>
+                          </DialogHeader>
+                          {/* You can add more detailed info here for each service if needed */}
+                          <DialogFooter>
+                            <DialogClose asChild>
+                              <Button variant="outline">Close</Button>
+                            </DialogClose>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {service.description}
-                    </p>
-                    <Button
-                      variant="link"
-                      className="text-medical-green hover:text-medical-green-dark p-0">
-                      Read More →
-                    </Button>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </React.Fragment>
             ))}
           </div>
         </div>
