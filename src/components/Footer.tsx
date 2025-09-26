@@ -12,14 +12,14 @@ const Footer = () => {
               <Phone className="w-5 h-5 mt-1 text-medical-accent" />
               <div>
                 <p className="font-medium">Call Us</p>
-                <p className="text-white/80">7337528806</p>
+                <p className="text-white/80">9019374419</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <Mail className="w-5 h-5 mt-1 text-medical-accent" />
               <div>
                 <p className="font-medium">Email</p>
-                <p className="text-white/80">info@gastro360clinics.com</p>
+                <p className="text-white/80">sreelakshmigastro@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
@@ -38,11 +38,11 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-1 text-medical-accent" />
                 <div>
-                  <p className="font-medium">Kondapur</p>
-                  <p className="text-white/80 text-sm">Hyderabad, Telangana</p>
+                  <p className="font-medium">Yelhanka New Town</p>
+                  <p className="text-white/80 text-sm">Karnataka, Bengaluru</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              {/* <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-1 text-medical-accent" />
                 <div>
                   <p className="font-medium">Madinaguda</p>
@@ -62,7 +62,7 @@ const Footer = () => {
                   <p className="font-medium">Manikonda</p>
                   <p className="text-white/80 text-sm">Hyderabad, Telangana</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -82,13 +82,16 @@ const Footer = () => {
 
           {/* About */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-6">Gastro 360 Clinics</h3>
+            <h3 className="text-xl font-semibold mb-6">
+              S L Gastro & Liver Clinic
+            </h3>
             <p className="text-white/80 text-sm leading-relaxed">
-              A comprehensive digestive and liver wellness clinic providing expert care with the latest technology and compassionate service across multiple locations in Hyderabad.
+              A comprehensive digestive and liver wellness clinic providing
+              expert care with the latest technology and compassionate service.
             </p>
             <div className="pt-4">
               <p className="text-xs text-white/60">
-                © 2024 Gastro 360 Clinics. All rights reserved.
+                © 2024 S L Gastro & Liver Clinic. All rights reserved.
               </p>
             </div>
           </div>

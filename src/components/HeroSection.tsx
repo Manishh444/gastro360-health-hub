@@ -31,28 +31,39 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative">
       {/* Hero Image Background */}
-      <div 
+      <div
         className="relative min-h-[600px] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+        style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-medical-green/20 to-transparent"></div>
-        
+
         <div className="relative container mx-auto px-4 py-20 flex items-center min-h-[600px]">
           <div className="max-w-2xl text-white">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Expert Care for Your
-              <span className="block text-medical-accent">Digestive Health</span>
+              <span className="block text-medical-accent">
+                Digestive Health
+              </span>
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Comprehensive gastroenterology and hepatology services with the latest technology and compassionate care.
+              Comprehensive gastroenterology and hepatology services with the
+              latest technology and compassionate care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3 text-lg">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Appointment
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-medical-green px-8 py-3 text-lg">
+              <a
+                href="tel:+919019374419"
+                className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors">
+                <Button
+                  size="lg"
+                  className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3 text-lg">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book Appointment
+                </Button>
+              </a>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-medical-green px-8 py-3 text-lg">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Chat Online
               </Button>
@@ -66,15 +77,27 @@ const HeroSection = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+              <Card
+                key={index}
+                className="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
                 <div className="flex items-start space-x-4">
                   <div className={`p-3 rounded-full ${service.color}`}>
-                    <img src={service.icon} alt={service.title} className="w-8 h-8" />
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-8 h-8"
+                    />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <Button variant="link" className="text-medical-green hover:text-medical-green-dark p-0">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {service.description}
+                    </p>
+                    <Button
+                      variant="link"
+                      className="text-medical-green hover:text-medical-green-dark p-0">
                       Read More →
                     </Button>
                   </div>
@@ -89,12 +112,19 @@ const HeroSection = () => {
       <div className="py-16 bg-medical-green-light/10">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-semibold text-foreground mb-4">
-            {'>'} Schedule your appointment online
+            {">"} Schedule your appointment online
           </h3>
-          <Button size="lg" className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3">
-            <Calendar className="w-5 h-5 mr-2" />
-            Book an Appointment
-          </Button>
+
+          <a
+            href="tel:+919019374419"
+            className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors">
+            <Button
+              size="lg"
+              className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3 text-lg">
+              <Calendar className="w-5 h-5 mr-2" />
+              Book Appointment
+            </Button>
+          </a>
         </div>
       </div>
     </section>

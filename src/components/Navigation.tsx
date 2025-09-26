@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GalleryCarousel from "@/components/GalleryCarousel";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo1.jpg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,10 +50,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <img src={logo} alt="Gastro 360 Logo" className="w-16 h-16" />
+            <img src={logo} alt="Gastro 360 Logo" className="w-16 h-8" />
             <div>
               <h1 className="text-2xl font-bold text-foreground">
-                Gastro <span className="text-medical-green">360</span> Clinics
+                S L Gastro &{" "}
+                <span className="text-medical-green">Liver</span> Clinic
               </h1>
               <p className="text-sm text-muted-foreground italic">
                 A Comprehensive Digestive & Liver Wellness Clinic
@@ -71,21 +72,19 @@ const Navigation = () => {
                   size="sm"
                   onClick={() => scrollToSection(item.href)}
                   className={`${
-                    index === 0 
-                      ? "bg-medical-green text-white hover:bg-medical-green-dark" 
+                    index === 0
+                      ? "bg-medical-green text-white hover:bg-medical-green-dark"
                       : "text-foreground hover:text-medical-green hover:bg-medical-green/10"
-                  } rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer`}
-                >
+                  } rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer`}>
                   {item.label}
                 </Button>
               ))}
-              <GalleryCarousel 
+              <GalleryCarousel
                 trigger={
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer"
-                  >
+                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer">
                     GALLERY
                   </Button>
                 }
@@ -99,9 +98,12 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               className="lg:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -116,20 +118,18 @@ const Navigation = () => {
                   variant={index === 0 ? "default" : "ghost"}
                   onClick={() => scrollToSection(item.href)}
                   className={`${
-                    index === 0 
-                      ? "bg-medical-green text-white hover:bg-medical-green-dark" 
+                    index === 0
+                      ? "bg-medical-green text-white hover:bg-medical-green-dark"
                       : "text-foreground hover:text-medical-green hover:bg-medical-green/10"
-                  } justify-start cursor-pointer`}
-                >
+                  } justify-start cursor-pointer`}>
                   {item.label}
                 </Button>
               ))}
-              <GalleryCarousel 
+              <GalleryCarousel
                 trigger={
                   <Button
                     variant="ghost"
-                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 justify-start cursor-pointer"
-                  >
+                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 justify-start cursor-pointer">
                     GALLERY
                   </Button>
                 }

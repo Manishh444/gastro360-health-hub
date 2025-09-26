@@ -28,17 +28,21 @@ const WhyGastro360 = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            Why Gastro 360 ?
+            Why S L Gastro & Liver Clinic ?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We provide comprehensive digestive care with modern technology and personalized attention
+            We provide comprehensive digestive care with modern technology and
+            personalized attention
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow duration-300 bg-white border-0">
-              <div className={`mx-auto w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-6`}>
+            <Card
+              key={index}
+              className="p-8 text-center hover:shadow-lg transition-shadow duration-300 bg-white border-0">
+              <div
+                className={`mx-auto w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-6`}>
                 <feature.icon className={`w-8 h-8 ${feature.color}`} />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">

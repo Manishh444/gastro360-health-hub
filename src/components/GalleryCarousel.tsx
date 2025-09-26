@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import facilty from "@/assets/facility.jpg"; // Placeholder images
+import office from "@/assets/office.jpg"; // Placeholder images
+import machine from "@/assets/machine.jpg"; // Placeholder images
 
 const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -10,17 +13,17 @@ const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
   // Sample medical facility images - in a real app these would be actual clinic photos
   const images = [
     {
-      src: "/api/placeholder/800/600",
+      src: facilty,
       alt: "Modern Endoscopy Suite",
       title: "State-of-the-Art Endoscopy Suite"
     },
     {
-      src: "/api/placeholder/800/600", 
+      src: machine, 
       alt: "Reception Area",
       title: "Welcoming Reception Area"
     },
     {
-      src: "/api/placeholder/800/600",
+      src: office,
       alt: "Consultation Room",
       title: "Private Consultation Rooms"
     },

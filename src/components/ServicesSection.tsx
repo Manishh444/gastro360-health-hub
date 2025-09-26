@@ -37,19 +37,27 @@ const ServicesSection = () => {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">Services</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            At Gastro 360 clinics, endoscopy, sigmoidoscopy, proctoscopy, colonoscopy procedures are done in a safe, smooth and efficient way after proper high disinfection to avoid cross infection.
+            At S L Gastro & Liver Clinic, endoscopy, sigmoidoscopy, proctoscopy,
+            colonoscopy procedures are done in a safe, smooth and efficient way
+            after proper high disinfection to avoid cross infection.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            All the procedures are done using latest advanced endoscopy equipment which can detect lesions missed by conventional endoscope equipment.
+            All the procedures are done using latest advanced endoscopy
+            equipment which can detect lesions missed by conventional endoscope
+            equipment.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Technology like Blue laser imaging (BLI) and Linked color imaging (LCI) integrated with Multi LED visualisation helps in viewing and acquiring high resolution stomach and colon images.
+            Technology like Blue laser imaging (BLI) and Linked color imaging
+            (LCI) integrated with Multi LED visualisation helps in viewing and
+            acquiring high resolution stomach and colon images.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-white border border-border">
+            <Card
+              key={index}
+              className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-white border border-border">
               <div className="text-4xl mb-4">{service.image}</div>
               <h3 className="text-lg font-semibold text-foreground mb-3">
                 {service.title}
@@ -62,10 +70,17 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3">
+          <a
+            href="tel:+919019374419"
+            className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors">
+            
+          <Button
+            size="lg"
+            className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3">
             <Phone className="w-5 h-5 mr-2" />
             BOOK SERVICES
           </Button>
+          </a>
         </div>
       </div>
     </section>
