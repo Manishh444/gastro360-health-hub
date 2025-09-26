@@ -15,20 +15,33 @@ const Navigation = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    if (href === "#home") {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const element = document.querySelector(href) as HTMLElement;
-      if (element) {
-        const navbarHeight = 100; // Approximate navbar height
-        const elementPosition = element.offsetTop - navbarHeight;
-        window.scrollTo({ 
-          top: elementPosition, 
-          behavior: 'smooth' 
-        });
+    const scrollHome = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const performScroll = () => {
+      const element = document.querySelector(href) as HTMLElement | null;
+      const navbar = document.querySelector('nav') as HTMLElement | null;
+      if (!element) return;
+      const navbarHeight = navbar?.offsetHeight ?? 0;
+      const y = window.scrollY + element.getBoundingClientRect().top - navbarHeight - 8; // small extra spacing
+      window.scrollTo({ top: Math.max(y, 0), behavior: 'smooth' });
+    };
+
+    if (href === '#home') {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+        requestAnimationFrame(() => requestAnimationFrame(scrollHome));
+      } else {
+        scrollHome();
       }
+      return;
     }
-    setIsMenuOpen(false);
+
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      requestAnimationFrame(() => requestAnimationFrame(performScroll));
+    } else {
+      performScroll();
+    }
   };
 
   return (
