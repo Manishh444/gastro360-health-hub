@@ -22,13 +22,13 @@ const Footer = () => {
                 <p className="text-white/80">sreelakshmigastro@gmail.com</p>
               </div>
             </div>
-            <div className="flex items-start space-x-3">
+            {/* <div className="flex items-start space-x-3">
               <Clock className="w-5 h-5 mt-1 text-medical-accent" />
               <div>
                 <p className="font-medium">Hours</p>
                 <p className="text-white/80">Mon-Sat: 9AM-8PM</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Locations */}
