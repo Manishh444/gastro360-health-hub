@@ -9,7 +9,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), mode === "development" && componentTagger()].filter(
+    Boolean
+  ),
+  base: '/gastro360-health-hub/', // 👈 VERY IMPORTANT
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

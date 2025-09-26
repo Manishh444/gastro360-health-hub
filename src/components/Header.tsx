@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <MapPin className="w-4 h-4 text-medical-green" />
-          <span>Karnataka, Bengaluru, India</span>
+          <span>Yelhanka New Town, Bengaluru, Karnataka</span>
         </div>
 
         {/* <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">

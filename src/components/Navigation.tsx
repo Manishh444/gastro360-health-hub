@@ -9,24 +9,25 @@ const Navigation = () => {
 
   const navItems = [
     { label: "HOME", href: "#home" },
-    { label: "ABOUT US", href: "#about" }, 
+    { label: "ABOUT US", href: "#about" },
     { label: "SERVICES", href: "#services" },
     { label: "TESTIMONIALS", href: "#testimonials" },
   ];
 
   const scrollToSection = (href: string) => {
-    const scrollHome = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollHome = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
     const performScroll = () => {
       const element = document.querySelector(href) as HTMLElement | null;
-      const navbar = document.querySelector('nav') as HTMLElement | null;
+      const navbar = document.querySelector("nav") as HTMLElement | null;
       if (!element) return;
       const navbarHeight = navbar?.offsetHeight ?? 0;
-      const y = window.scrollY + element.getBoundingClientRect().top - navbarHeight - 8; // small extra spacing
-      window.scrollTo({ top: Math.max(y, 0), behavior: 'smooth' });
+      const y =
+        window.scrollY + element.getBoundingClientRect().top - navbarHeight - 8; // small extra spacing
+      window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
     };
 
-    if (href === '#home') {
+    if (href === "#home") {
       if (isMenuOpen) {
         setIsMenuOpen(false);
         requestAnimationFrame(() => requestAnimationFrame(scrollHome));
@@ -50,11 +51,15 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <img src={logo} alt="Gastro 360 Logo" className="w-16 h-8" />
+            <img
+              src={logo}
+              alt="S L Gastro & Liver Clinic Logo"
+              className="w-16 h-8"
+            />
             <div>
               <h1 className="text-2xl font-bold text-foreground">
-                S L Gastro &{" "}
-                <span className="text-medical-green">Liver</span> Clinic
+                S L Gastro & <span className="text-medical-green">Liver</span>{" "}
+                Clinic
               </h1>
               <p className="text-sm text-muted-foreground italic">
                 A Comprehensive Digestive & Liver Wellness Clinic
