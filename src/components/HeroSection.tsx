@@ -75,13 +75,13 @@ const HeroSection = () => {
                   Book Appointment
                 </Button>
               </a>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-medical-green px-8 py-3 text-lg">
+                className="border-white bg-black text-white hover:bg-white hover:text-medical-green px-8 py-3 text-lg">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Chat Online
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
