@@ -18,9 +18,14 @@ const Navigation = () => {
     if (href === "#home") {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      const element = document.querySelector(href);
+      const element = document.querySelector(href) as HTMLElement;
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const navbarHeight = 100; // Approximate navbar height
+        const elementPosition = element.offsetTop - navbarHeight;
+        window.scrollTo({ 
+          top: elementPosition, 
+          behavior: 'smooth' 
+        });
       }
     }
     setIsMenuOpen(false);
