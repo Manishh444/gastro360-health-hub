@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [react(), mode === "development" && componentTagger()].filter(
     Boolean
   ),
-  base: '/gastro360-health-hub/', // 👈 VERY IMPORTANT
+  base: '/', // 👈 VERY IMPORTANT
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
