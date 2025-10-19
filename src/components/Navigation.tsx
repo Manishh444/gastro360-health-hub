@@ -4,8 +4,21 @@ import { Button } from "@/components/ui/button";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import logo from "@/assets/Logo2.png";
 
+const getNavButtonClasses = (isActive: boolean) => {
+  const baseClasses =
+    "rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer";
+
+  const activeClasses =
+    "bg-medical-green text-white hover:bg-medical-green-dark";
+  const inactiveClasses =
+    "text-foreground hover:text-medical-green hover:bg-medical-green/10";
+
+  return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
+};
+
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const navItems = [
     { label: "HOME", href: "#home" },
@@ -76,15 +89,14 @@ const Navigation = () => {
             <div className="flex items-center bg-medical-green-light/50 rounded-full px-2 py-1">
               {navItems.map((item, index) => (
                 <Button
-                  key={item.label}
-                  variant={index === 0 ? "default" : "ghost"}
+                  key={index}
+                  variant={index === 0 ? "ghost" : "ghost"}
                   size="sm"
-                  onClick={() => scrollToSection(item.href)}
-                  className={`${
-                    index === 0
-                      ? "bg-medical-green text-white hover:bg-medical-green-dark"
-                      : "text-foreground hover:text-medical-green hover:bg-medical-green/10"
-                  } rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer`}>
+                  onClick={() => {
+                    scrollToSection(item.href);
+                    setActiveIndex(index); // update active button on click
+                  }}
+                  className={getNavButtonClasses(activeIndex === index)}>
                   {item.label}
                 </Button>
               ))}

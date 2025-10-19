@@ -42,7 +42,7 @@ const HeroSection = () => {
     {
       title: "Body Composition Analysis",
       description:
-        "Procedures are done with high disinfection to prevent COVID spread",
+        "Get detailed insights into your fat, muscle, bone, and water percentages.",
       icon: safetyIcon,
       color: "bg-medical-accent",
     },
