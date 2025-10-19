@@ -71,24 +71,17 @@ const HeroSection = () => {
               Comprehensive gastroenterology and hepatology services with the
               latest technology and compassionate care.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="hidden md:block absolute top-90 left-40 transform -translate-x-1/2 -translate-y-1/2 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+919019374419"
                 className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors mt-6">
                 <Button
                   size="lg"
-                  className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3 text-lg">
+                  className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3 text-lg flex items-center justify-center">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
               </a>
-              {/* <Button
-                size="lg"
-                variant="outline"
-                className="border-white bg-black text-white hover:bg-white hover:text-medical-green px-8 py-3 text-lg">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Chat Online
-              </Button> */}
             </div>
           </div>
         </div>
