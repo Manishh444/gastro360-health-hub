@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-medical-green text-white py-16">
+    <footer className="bg-[#009688] text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Contact Info */}
@@ -91,7 +91,7 @@ const Footer = () => {
             </p>
             <div className="pt-4">
               <p className="text-xs text-white/60">
-                © 2024 S L Gastro & Liver Clinic. All rights reserved.
+                © 2025 S L Gastro & Liver Clinic. All rights reserved.
               </p>
             </div>
           </div>

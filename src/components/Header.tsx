@@ -22,6 +22,15 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <Phone className="w-4 h-4 text-medical-green" />
           <a
+            href="tel:+918618634569"
+            className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors">
+             <span className="hidden md:inline">For COMED Call us at : </span> 
+            8618634569
+          </a>
+        </div>
+        <div className="flex items-center gap-2">
+          <Phone className="w-4 h-4 text-medical-green" />
+          <a
             href="tel:+919019374419"
             className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors">
             9019374419

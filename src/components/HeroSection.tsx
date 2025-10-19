@@ -39,6 +39,13 @@ const HeroSection = () => {
       icon: safetyIcon,
       color: "bg-medical-accent",
     },
+    {
+      title: "Body Composition Analysis",
+      description:
+        "Procedures are done with high disinfection to prevent COVID spread",
+      icon: safetyIcon,
+      color: "bg-medical-accent",
+    },
   ];
 
   const [openService, setOpenService] = useState<number | null>(null);
@@ -52,22 +59,22 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-medical-green/20 to-transparent"></div>
 
-        <div className="relative container mx-auto px-4 py-20 flex items-center min-h-[600px]">
+        <div className="relative container mx-auto px-4 py-20 flex items-center min-h-[40px]">
           <div className="max-w-2xl text-white">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h2 className="hidden md:block text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Expert Care for Your
               <span className="block text-medical-accent">
                 Digestive Health
               </span>
             </h2>
-            <p className="text-xl mb-8 text-white/90">
+            <p className="hidden md:block text-xl mb-8 text-white/90 w-full md:w-2/3 lg:w-1/2">
               Comprehensive gastroenterology and hepatology services with the
               latest technology and compassionate care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+919019374419"
-                className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors">
+                className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors mt-6">
                 <Button
                   size="lg"
                   className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3 text-lg">
@@ -88,7 +95,9 @@ const HeroSection = () => {
       </div>
 
       {/* Services Cards Overlay */}
-      <div className="relative -mt-32 z-10">
+      <div
+        className="relative  -mt-42 z-10 backdrop-blur-md"
+        style={{ backgroundColor: "rgba(132, 243, 208, 0.2)" }}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (

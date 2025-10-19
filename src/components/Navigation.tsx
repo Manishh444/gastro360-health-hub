@@ -46,30 +46,34 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="container mx-auto px-4 py-4">
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-teal-100/30 to-green-100/30 backdrop-blur-md border-b border-border">
+      {" "}
+      <div className="container mx-auto px-4 rounded-lg">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <img
               src={logo}
               alt="S L Gastro & Liver Clinic Logo"
-              className="w-16 h-16"
+              className="w-16 h-16 rounded-lg object-cover shadow-md"
             />
             <div>
               <h1 className="text-2xl font-bold text-foreground">
                 S L Gastro & <span className="text-medical-green">Liver</span>{" "}
                 Clinic
               </h1>
-              <p className="text-sm text-muted-foreground italic">
-                A Comprehensive Digestive & Liver Wellness Clinic
+              <p
+                className="text-sm text-muted-foreground  italic"
+                style={{ color: "#000000" }} // greenish-teal
+              >
+                COMED - centre for obesity and metabolic disorders.
               </p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            <div className="flex items-center bg-medical-green-light/20 rounded-full px-2 py-1">
+            <div className="flex items-center bg-medical-green-light/50 rounded-full px-2 py-1">
               {navItems.map((item, index) => (
                 <Button
                   key={item.label}

@@ -4,10 +4,10 @@ import { Star } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Rajesh Kumar",
+      name: "Suhas Raj",
       condition: "Liver Disease Treatment",
       rating: 5,
-      text: "The care I received at S L Gastro & Liver Clinic was exceptional. The doctors were knowledgeable and the treatment was very effective. My liver condition has improved significantly.",
+      text: "The clinic was clean and well-equipped, and all tests and procedures were carried out with great care. What truly stood out was the doctor’s genuine concern for my health and willingness to answer all my questions patiently.",
     },
     {
       name: "Priya Sharma",

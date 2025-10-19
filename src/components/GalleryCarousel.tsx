@@ -5,6 +5,9 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import facilty from "@/assets/facility.jpg"; // Placeholder images
 import office from "@/assets/office.jpg"; // Placeholder images
 import machine from "@/assets/machine.jpg"; // Placeholder images
+import Award from "@/assets/AWARD-1.jpg"; // Placeholder images
+import Award2 from "@/assets/AWARD-2.jpg"; // Placeholder images
+import Award3 from "@/assets/AWARD-3.jpg"; // Placeholder images
 
 const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -15,33 +18,33 @@ const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
     {
       src: facilty,
       alt: "Modern Endoscopy Suite",
-      title: "State-of-the-Art Endoscopy Suite"
+      title: "State-of-the-Art Endoscopy Suite",
     },
     {
-      src: machine, 
+      src: machine,
       alt: "Reception Area",
-      title: "Welcoming Reception Area"
+      title: "Welcoming Reception Area",
     },
     {
       src: office,
       alt: "Consultation Room",
-      title: "Private Consultation Rooms"
+      title: "Private Consultation Rooms",
     },
     {
       src: "/api/placeholder/800/600",
       alt: "Advanced Medical Equipment",
-      title: "Latest Medical Technology"
+      title: "Latest Medical Technology",
     },
     {
-      src: "/api/placeholder/800/600",
-      alt: "Recovery Room",
-      title: "Comfortable Recovery Areas"
+      src: Award,
+      alt: "award ceremony",
+      title: "award ceremony",
     },
     {
-      src: "/api/placeholder/800/600",
-      alt: "Laboratory",
-      title: "On-site Laboratory Facilities"
-    }
+      src: Award3,
+      alt: "Award ceremony",
+      title: "award ceremony",
+    },
   ];
 
   const nextImage = () => {
