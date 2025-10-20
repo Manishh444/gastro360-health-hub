@@ -1,7 +1,7 @@
 // src/data/doctorData.js
 
-import doctorLavanya from "@/assets/lavanya.png";
-import doctorManoj from "@/assets/manoj.png";
+import doctorLavanya from "@/assets/drLavnya.jpg";
+import doctorManoj from "@/assets/drManoj.jpg";
 
 export const doctors = [
   {
