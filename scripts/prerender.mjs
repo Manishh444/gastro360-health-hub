@@ -1,12 +1,13 @@
 import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { render, pages, clinic } from '../.prerender/entry-server.js';
+import { render, pages, clinic, heroSlides, heroImageSizes } from '../.prerender/entry-server.js';
 const template = await readFile('dist/index.html', 'utf8');
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 for (const page of [...pages, { path: '/404.html', title: 'Page not found | S L Gastro & Liver Clinic', description: 'The requested page could not be found.' }]) {
   const url = `${clinic.url}${page.path}`;
   const schema = { '@context': 'https://schema.org', '@type': 'MedicalClinic', '@id': `${clinic.url}/#clinic`, name: clinic.name, url: `${clinic.url}/`, telephone: clinic.phone, address: { '@type': 'PostalAddress', addressLocality: 'Yelahanka, Bengaluru', addressRegion: 'Karnataka', addressCountry: 'IN' } };
-  const head = `<title>${escape(page.title)}</title>
+  const heroPreload = page.path === '/' ? `<link rel="preload" as="image" href="${heroSlides[0].image}" imagesrcset="${heroSlides[0].srcSet}" imagesizes="${heroImageSizes}" fetchpriority="high" />` : '';
+  const head = `${heroPreload}<title>${escape(page.title)}</title>
 <meta name="description" content="${escape(page.description)}" />
 <link rel="canonical" href="${url}" />
 <meta property="og:title" content="${escape(page.title)}" />

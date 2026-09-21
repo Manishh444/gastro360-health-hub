@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
+            <h2 className="text-xl font-semibold mb-6">Contact Us</h2>
             <div className="flex items-start space-x-3">
               <Phone className="w-5 h-5 mt-1 text-medical-accent" />
               <div>
@@ -34,7 +34,7 @@ const Footer = () => {
 
           {/* Locations */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-6">Our Locations</h3>
+            <h2 className="text-xl font-semibold mb-6">Our Locations</h2>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-1 text-medical-accent" />
@@ -70,7 +70,7 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-6">Services</h3>
+            <h2 className="text-xl font-semibold mb-6">Services</h2>
             <ul className="space-y-2 text-white/80">
               <li>Gastroenterology</li>
               <li>Hepatology</li>
@@ -84,9 +84,9 @@ const Footer = () => {
 
           {/* About */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-6">
+            <h2 className="text-xl font-semibold mb-6">
               S L Gastro & Liver Clinic
-            </h3>
+            </h2>
             <p className="text-white/80 text-sm leading-relaxed">
               A comprehensive digestive and liver wellness clinic providing
               expert care with the latest technology and compassionate service.

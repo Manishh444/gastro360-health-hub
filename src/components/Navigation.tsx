@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react';
 import { centres, clinic, navigation } from '@/data/clinic';
 import GalleryCarousel from '@/components/GalleryCarousel';
-import logo from '@/assets/Logo2.png';
+import logo from '@/assets/optimized/logo-104.webp';
 export default function Navigation() {
   const [mobile, setMobile] = useState(false);
   const [expanded, setExpanded] = useState(false);

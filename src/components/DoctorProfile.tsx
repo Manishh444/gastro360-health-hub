@@ -14,6 +14,12 @@ const DoctorProfile = () => {
           <div className="flex-shrink-0">
             <img
               src={doctor.image}
+              srcSet={`${doctor.imageSmall} 288w, ${doctor.image} 576w`}
+              sizes="(max-width: 319px) calc(100vw - 32px), 288px"
+              width={288}
+              height={320}
+              loading="lazy"
+              decoding="async"
               alt={doctor.name}
               className="rounded-lg shadow-lg w-72 max-w-full h-80 object-cover"
             />

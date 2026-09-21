@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight, Pause, Play, Phone, ArrowUpRight } from 'lucide-react';
 import { clinic } from '@/data/clinic';
-import lavanyaPoster from '@/assets/drld.jpeg';
-import manojPoster from '@/assets/drmd.jpeg';
-
-const slides = [
-  { image: manojPoster, name: 'Dr. Manoj Gowda', centre: 'S L Gastro & Liver Clinic', detail: 'Digestive & liver care', href: '/centres/gastro-liver/', width: 1254, height: 1254 },
-  { image: lavanyaPoster, name: 'Dr. Lavanya N', centre: 'COMED', detail: 'Nutrition & metabolic health', href: '/centres/comed/', width: 1024, height: 1536 },
-];
+import { heroSlides as slides } from '@/data/heroSlides';
 
 export default function HeroSlideshow() {
   const [active, setActive] = useState(0);
@@ -47,7 +41,7 @@ export default function HeroSlideshow() {
     onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
     onFocusCapture={() => setPaused(true)}>
     <div className="hero-showcase-backdrop" aria-hidden="true">
-      {slides.map((item, index) => <div key={item.name} className={`hero-ambient ${active === index ? 'is-active' : ''}`} style={{ backgroundImage: `url(${item.image})` }}/>) }
+      {slides.map((item, index) => <div key={item.name} className={`hero-ambient ${active === index ? 'is-active' : ''}`} style={{ backgroundImage: `url(${item.background})` }}/>) }
     </div>
     <div className="container mx-auto px-4 sm:px-6 relative">
       <div className="hero-showcase-grid">
@@ -68,7 +62,7 @@ export default function HeroSlideshow() {
         <div className="hero-poster-column">
           <div className="hero-poster-stage" aria-live={rotating ? 'off' : 'polite'}>
             {slides.map((item, index) => <div key={item.name} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${slides.length}: ${item.name}`} aria-hidden={index !== active} className={`hero-poster-slide ${index === active ? 'is-active' : ''}`}>
-              <img src={item.image} alt={`${item.name} — ${item.centre} profile poster`} width={item.width} height={item.height} loading="eager" decoding="async" className="hero-poster-image"/>
+              <img src={item.image} srcSet={item.srcSet} sizes={item.sizes} {...{ fetchpriority: index === 0 ? "high" : "low" }} alt={`${item.name} — ${item.centre} profile poster`} width={item.width} height={item.height} loading={index === 0 ? "eager" : "lazy"} decoding="async" className="hero-poster-image mx-auto" style={{ width: `${item.width / item.height * 100}%` }}/>
             </div>)}
           </div>
           <div className="hero-slide-footer">

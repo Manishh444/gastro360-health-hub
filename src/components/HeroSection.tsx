@@ -12,9 +12,9 @@ import {
 } from "@/components/ui/dialog";
 import { Calendar, MessageCircle } from "lucide-react";
 import HeroSlideshow from "@/components/HeroSlideshow";
-import endoscopyIcon from "@/assets/endoscopy-icon.png";
-import liverIcon from "@/assets/liver-icon.png";
-import safetyIcon from "@/assets/safety-icon.png";
+import endoscopyIcon from "@/assets/optimized/endoscopy-icon-64.webp";
+import liverIcon from "@/assets/optimized/liver-icon-64.webp";
+import safetyIcon from "@/assets/optimized/safety-icon-64.webp";
 
 import React, { useState } from "react";
 
@@ -55,6 +55,7 @@ const HeroSection = () => {
       <HeroSlideshow />
 
       {/* Services Cards Overlay */}
+      <h2 className="sr-only">Our areas of care</h2>
       <div
         className="relative  -mt-42 z-10 backdrop-blur-md"
         style={{ backgroundColor: "rgba(132, 243, 208, 0.2)" }}>
@@ -67,7 +68,10 @@ const HeroSection = () => {
                     <div className={`p-3 rounded-full ${service.color}`}>
                       <img
                         src={service.icon}
-                        alt={service.title}
+                        alt=""
+                        width={32}
+                        height={32}
+                        loading="lazy"
                         className="w-8 h-8"
                       />
                     </div>
@@ -117,9 +121,9 @@ const HeroSection = () => {
       {/* Schedule Appointment CTA */}
       <div className="py-16 bg-medical-green-light/10">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-semibold text-foreground mb-4">
+          <h2 className="text-2xl font-semibold text-foreground mb-4">
             Call to book your appointment
-          </h3>
+          </h2>
 
           <a
             href="tel:+919019374419"

@@ -10,3 +10,5 @@ export const pages = [
 ];
 export function render(path: string) { return renderToString(<StaticRouter location={path} future={{ v7_relativeSplatPath: true }}><App/></StaticRouter>); }
 export { clinic };
+
+export { heroSlides, heroImageSizes } from './data/heroSlides';

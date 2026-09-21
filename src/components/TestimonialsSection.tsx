@@ -72,9 +72,9 @@ const TestimonialsSection = () => {
                   "{testimonial.text}"
                 </p>
                 <div className="border-t pt-4">
-                  <h4 className="font-semibold text-foreground">
+                  <h3 className="font-semibold text-foreground">
                     {testimonial.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-muted-foreground">
                     {testimonial.condition}
                   </p>

@@ -39,9 +39,9 @@ const AboutSection = () => {
               </p>
             </div>
             <div className="bg-medical-green/10 p-8 rounded-lg">
-              <h4 className="text-xl font-semibold text-medical-green mb-4">
+              <h3 className="text-xl font-semibold text-medical-green mb-4">
                 Our Expertise
-              </h4>
+              </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• Advanced Endoscopy Procedures</li>
                 <li>• Liver Disease Management</li>
@@ -56,9 +56,9 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <Card className="p-6 text-center bg-white border border-border">
               <div className="text-3xl mb-4">🏥</div>
-              <h4 className="text-lg font-semibold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-3">
                 State-of-the-Art Facility
-              </h4>
+              </h3>
               <p className="text-muted-foreground text-sm">
                 Modern clinic equipped with the latest medical technology for
                 accurate diagnosis and effective treatment.
@@ -66,9 +66,9 @@ const AboutSection = () => {
             </Card>
             <Card className="p-6 text-center bg-white border border-border">
               <div className="text-3xl mb-4">👨‍⚕️</div>
-              <h4 className="text-lg font-semibold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-3">
                 Expert Team
-              </h4>
+              </h3>
               <p className="text-muted-foreground text-sm">
                 Highly qualified gastroenterologists and hepatologists with
                 years of experience in digestive health.
@@ -76,9 +76,9 @@ const AboutSection = () => {
             </Card>
             <Card className="p-6 text-center bg-white border border-border">
               <div className="text-3xl mb-4">🤝</div>
-              <h4 className="text-lg font-semibold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-3">
                 Patient-Centered Care
-              </h4>
+              </h3>
               <p className="text-muted-foreground text-sm">
                 Personalized treatment plans and compassionate care focused on
                 each patient's unique needs.

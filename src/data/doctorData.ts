@@ -1,13 +1,16 @@
+import lavanyaSmall from "@/assets/optimized/doctor-lavanya-288.webp";
+import manojSmall from "@/assets/optimized/doctor-manoj-288.webp";
 // src/data/doctorData.js
 
-import doctorLavanya from "@/assets/drLavnya.jpeg";
-import doctorManoj from "@/assets/drManoj.jpeg";
+import doctorLavanya from "@/assets/optimized/doctor-lavanya-576.webp";
+import doctorManoj from "@/assets/optimized/doctor-manoj-576.webp";
 
 export const doctors = [
   {
     id: "lavanya-n",
     name: "Dr. Lavanya N",
     image: doctorLavanya,
+    imageSmall: lavanyaSmall,
     title:
       "Founder & Chief Consultant – COMED (Centre for Obesity and Metabolic Disorders) | Gastrointestinal Nutritionist | Certified Health Coach | Researcher in Body Composition Science",
     shortDescription:
@@ -33,6 +36,7 @@ export const doctors = [
     id: "manoj-gowda",
     name: "Dr. Manoj Gowda",
     image: doctorManoj,
+    imageSmall: manojSmall,
     title:
       "Associate Professor – Medical Gastroenterology, Sapthagiri Institute of Medical Science & RH",
     shortDescription:
