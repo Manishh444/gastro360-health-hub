@@ -1,11 +1,11 @@
 // src/data/doctorData.js
 
-import doctorLavanya from "@/assets/drLavnya.jpg";
-import doctorManoj from "@/assets/drManoj.jpg";
+import doctorLavanya from "@/assets/drLavnya.jpeg";
+import doctorManoj from "@/assets/drManoj.jpeg";
 
 export const doctors = [
   {
-    id: 1,
+    id: "lavanya-n",
     name: "Dr. Lavanya N",
     image: doctorLavanya,
     title:
@@ -30,7 +30,7 @@ export const doctors = [
     phone: "+91-8618634569",
   },
   {
-    id: 1,
+    id: "manoj-gowda",
     name: "Dr. Manoj Gowda",
     image: doctorManoj,
     title:

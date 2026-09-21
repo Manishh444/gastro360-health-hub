@@ -1,35 +1,10 @@
+import { diagnosticServices } from "@/data/diagnostics";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Phone } from "lucide-react";
 
 const ServicesSection = () => {
-  const services = [
-    {
-      title: "UPPER G.I. ENDOSCOPY",
-      description: "Upper G.I. endoscopy procedure for gastric and acid reflux",
-      image: "🔬"
-    },
-    {
-      title: "HYDROGEN BREATH TEST", 
-      description: "Hydrogen breath test for bloating, diarrhoea, abdominal gas, IBS and lactose intolerance.",
-      image: "🫁"
-    },
-    {
-      title: "COLONOSCOPY",
-      description: "Colonoscopy or sigmoidoscopy for constipation, blood in stools, diarrhoea, piles, fissure & fistula",
-      image: "🩺"
-    },
-    {
-      title: "FIBROSCAN",
-      description: "Liver stiffness measurement to assess liver health in alcohol & non alcohol taking patients",
-      image: "📊"
-    },
-    {
-      title: "UREA BREATH TEST",
-      description: "Urea Breath test to rule Helicobacter pylori infection",
-      image: "🧪"
-    }
-  ];
+
 
   return (
     <section id="services" className="py-20 bg-background">
@@ -54,11 +29,11 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
+          {diagnosticServices.map((service, index) => (
             <Card
               key={index}
               className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-white border border-border">
-              <div className="text-4xl mb-4">{service.image}</div>
+
               <h3 className="text-lg font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
@@ -73,7 +48,7 @@ const ServicesSection = () => {
           <a
             href="tel:+919019374419"
             className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors">
-            
+
           <Button
             size="lg"
             className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3">

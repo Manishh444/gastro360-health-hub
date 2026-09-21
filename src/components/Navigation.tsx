@@ -1,166 +1,33 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import GalleryCarousel from "@/components/GalleryCarousel";
-import logo from "@/assets/Logo2.png";
-
-const getNavButtonClasses = (isActive: boolean) => {
-  const baseClasses =
-    "rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer";
-
-  const activeClasses =
-    "bg-medical-green text-white hover:bg-medical-green-dark";
-  const inactiveClasses =
-    "text-foreground hover:text-medical-green hover:bg-medical-green/10";
-
-  return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
-};
-
-const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const navItems = [
-    { label: "HOME", href: "#home" },
-    { label: "ABOUT US", href: "#about" },
-    { label: "SERVICES", href: "#services" },
-    { label: "TESTIMONIALS", href: "#testimonials" },
-  ];
-
-  const scrollToSection = (href: string) => {
-    const scrollHome = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-    const performScroll = () => {
-      const element = document.querySelector(href) as HTMLElement | null;
-      const navbar = document.querySelector("nav") as HTMLElement | null;
-      if (!element) return;
-      const navbarHeight = navbar?.offsetHeight ?? 0;
-      const y =
-        window.scrollY + element.getBoundingClientRect().top - navbarHeight - 8; // small extra spacing
-      window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
-    };
-
-    if (href === "#home") {
-      if (isMenuOpen) {
-        setIsMenuOpen(false);
-        requestAnimationFrame(() => requestAnimationFrame(scrollHome));
-      } else {
-        scrollHome();
-      }
-      return;
-    }
-
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      requestAnimationFrame(() => requestAnimationFrame(performScroll));
-    } else {
-      performScroll();
-    }
-  };
-
-  return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-teal-100/30 to-green-100/30 backdrop-blur-md border-b border-border">
-      {" "}
-      <div className="container mx-auto px-4 rounded-lg">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-4">
-            <img
-              src={logo}
-              alt="S L Gastro & Liver Clinic Logo"
-              className="w-16 h-16 rounded-lg object-cover shadow-md"
-            />
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">
-                S L Gastro & <span className="text-medical-green">Liver</span>{" "}
-                Clinic
-              </h1>
-              <p
-                className="text-sm text-muted-foreground  italic"
-                style={{ color: "#000000" }} // greenish-teal
-              >
-                COMED - centre for obesity and metabolic disorders.
-              </p>
-            </div>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            <div className="flex items-center bg-medical-green-light/50 rounded-full px-2 py-1">
-              {navItems.map((item, index) => (
-                <Button
-                  key={index}
-                  variant={index === 0 ? "ghost" : "ghost"}
-                  size="sm"
-                  onClick={() => {
-                    scrollToSection(item.href);
-                    setActiveIndex(index); // update active button on click
-                  }}
-                  className={getNavButtonClasses(activeIndex === index)}>
-                  {item.label}
-                </Button>
-              ))}
-              <GalleryCarousel
-                trigger={
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer">
-                    GALLERY
-                  </Button>
-                }
-              />
-            </div>
-          </div>
-
-          {/* Mobile Menu */}
-          <div className="flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </Button>
-          </div>
+import { useRef, useState } from 'react';
+import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react';
+import { centres, clinic, navigation } from '@/data/clinic';
+import GalleryCarousel from '@/components/GalleryCarousel';
+import logo from '@/assets/Logo2.png';
+export default function Navigation() {
+  const [mobile, setMobile] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const centreButton = useRef<HTMLButtonElement>(null);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const close = () => { setMobile(false); setExpanded(false); };
+  return <nav aria-label="Main navigation" className="sticky top-0 z-50 bg-white border-b shadow-sm" onKeyDown={event => {
+    if (event.key === 'Escape') { if (expanded) { setExpanded(false); centreButton.current?.focus(); } else { setMobile(false); menuButton.current?.focus(); } }
+  }}>
+    <div className="container mx-auto px-4">
+      <div className="flex items-center justify-between gap-3 py-3">
+        <a href="/" className="flex items-center gap-3 min-w-0"><img src={logo} width="52" height="52" alt="" className="shrink-0 rounded-lg"/><span><span className="block font-bold text-base sm:text-xl">S L Gastro & Liver Clinic</span><span className="hidden sm:block text-xs text-muted-foreground mt-1">{clinic.tagline}</span></span></a>
+        <div className="hidden xl:flex items-center gap-3 shrink-0">
+          {clinic.whatsapp && <a href={`https://wa.me/${clinic.whatsapp}`} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-teal-700 px-5 py-3 font-semibold text-teal-800 hover:bg-teal-50" aria-label="Contact S L Gastro & Liver Clinic on WhatsApp"><MessageCircle size={20} aria-hidden="true" />WhatsApp</a>}
+          <a href={`tel:${clinic.phone}`} className="clinic-button">Book Appointment</a>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-border">
-            <div className="flex flex-col space-y-2 mt-4">
-              {navItems.map((item, index) => (
-                <Button
-                  key={item.label}
-                  variant={index === 0 ? "default" : "ghost"}
-                  onClick={() => scrollToSection(item.href)}
-                  className={`${
-                    index === 0
-                      ? "bg-medical-green text-white hover:bg-medical-green-dark"
-                      : "text-foreground hover:text-medical-green hover:bg-medical-green/10"
-                  } justify-start cursor-pointer`}>
-                  {item.label}
-                </Button>
-              ))}
-              <GalleryCarousel
-                trigger={
-                  <Button
-                    variant="ghost"
-                    className="text-foreground hover:text-medical-green hover:bg-medical-green/10 justify-start cursor-pointer">
-                    GALLERY
-                  </Button>
-                }
-              />
-            </div>
-          </div>
-        )}
+        <button ref={menuButton} className="xl:hidden p-3" aria-label={mobile ? 'Close navigation' : 'Open navigation'} aria-expanded={mobile} aria-controls="main-navigation" onClick={() => setMobile(!mobile)}>{mobile ? <X/> : <Menu/>}</button>
       </div>
-    </nav>
-  );
-};
-
-export default Navigation;
+      <div id="main-navigation" className={`${mobile ? 'flex' : 'hidden'} xl:flex flex-col xl:flex-row xl:items-center gap-1 pb-3 max-h-[65dvh] overflow-y-auto xl:overflow-visible`}>
+        {navigation.map(item => item.label === 'OUR CENTRES' ? <div key={item.label} className="relative" onMouseEnter={() => setExpanded(true)} onMouseLeave={() => setExpanded(false)} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false); }}>
+          <button ref={centreButton} className="nav-link flex items-center gap-2 w-full" aria-expanded={expanded} aria-controls="centre-links" onClick={() => setExpanded(!expanded)}>OUR CENTRES <ChevronDown size={16}/></button>
+          <div id="centre-links" hidden={!expanded} className="xl:absolute xl:top-full xl:left-0 xl:w-80 bg-white rounded-xl border p-2 shadow-lg">{centres.map(centre => <a key={centre.id} href={centre.href} className="nav-link block whitespace-normal" onClick={close}>{centre.name}</a>)}</div>
+        </div> : <a key={item.label} href={item.href} className="nav-link" onClick={close}>{item.label}</a>)}
+        <GalleryCarousel trigger={<button className="nav-link text-left">GALLERY</button>}/>
+      </div>
+    </div>
+  </nav>;
+}

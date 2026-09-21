@@ -113,3 +113,49 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  :root { --foreground: 215 50% 15%; --muted-foreground: 215 15% 38%; --medical-green: 170 65% 28%; --medical-green-dark: 170 65% 22%; }
+  html { scroll-padding-top: 160px; }
+  body { overflow-wrap: break-word; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #087f8c; outline-offset: 4px; }
+}
+@layer components {
+  .nav-link { @apply rounded-lg px-3 py-3 text-xs font-semibold hover:bg-slate-100; min-height: 44px; }
+  .clinic-button { @apply inline-flex items-center justify-center rounded-lg bg-teal-800 px-6 py-3 font-semibold text-white; min-height: 48px; }
+  .clinic-button:hover { @apply bg-teal-900 text-white; }
+  .clinic-hero { @apply relative overflow-hidden bg-slate-900 text-white; }
+  .eyebrow { @apply text-center text-sm uppercase tracking-widest font-semibold text-teal-800 mb-4; }
+  .section-title { @apply text-center text-3xl sm:text-4xl font-semibold mb-6; }
+  .centre-card { @apply flex flex-col w-full rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-sm hover:border-teal-700; min-height: 270px; }
+  .mobile-actions { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; display: flex; background: #103247; color: white; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); }
+  .mobile-actions a { flex: 1; text-align: center; padding: 12px 4px; font-weight: 600; }
+  .skip-link { position: fixed; top: -100px; left: 16px; z-index: 100; background: white; padding: 12px; }
+  .skip-link:focus { top: 8px; }
+}
+@media (max-width: 1279px) { body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+
+/* Poster slides retain all embedded artwork at every breakpoint. */
+.hero-showcase { position: relative; overflow: hidden; isolation: isolate; color: white; background: #0c2439; }
+.hero-showcase-backdrop { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hero-showcase-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(8, 29, 48, .98) 12%, rgba(8, 29, 48, .91) 50%, rgba(8, 29, 48, .77)); }
+.hero-ambient { position: absolute; inset: -30px; background-size: cover; background-position: center 35%; filter: blur(22px); opacity: 0; transition: opacity 700ms ease; }
+.hero-ambient.is-active { opacity: 1; }
+.hero-showcase-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 36px 0 20px; }
+.hero-showcase-copy { align-self: center; }
+.hero-poster-column { min-width: 0; width: 100%; max-width: 600px; margin: auto; }
+.hero-poster-stage { position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; background: rgba(255,255,255,.06); overflow: hidden; border: 1px solid rgba(255,255,255,.18); }
+.hero-poster-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 700ms ease, visibility 700ms; }
+.hero-poster-slide.is-active { opacity: 1; visibility: visible; }
+.hero-poster-image { width: 100%; height: 100%; object-fit: contain; }
+.hero-slide-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 16px; }
+.hero-slide-control { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); flex-shrink: 0; }
+.hero-slide-control:hover { background: rgba(255,255,255,.15); }
+.hero-slide-dot { display: flex; align-items: center; justify-content: center; min-width: 44px; height: 44px; }
+.hero-slide-dot span { display: block; height: 4px; border-radius: 8px; transition: width 300ms ease; }
+.hero-call { display: inline-flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px; min-height: 48px; border: 1px solid rgba(255,255,255,.5); border-radius: 8px; font-weight: 600; }
+.hero-call:hover { background: rgba(255,255,255,.1); }
+.hero-showcase a:focus-visible, .hero-showcase button:focus-visible { outline-color: #5eead4; }
+@media (min-width: 1024px) { .hero-showcase-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 48px; padding-top: 48px; padding-bottom: 24px; } }
+@media (max-width: 374px) { .hero-slide-footer { flex-wrap: wrap; } }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import facilty from "@/assets/facility.jpg"; // Placeholder images
@@ -31,11 +31,6 @@ const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
       title: "Private Consultation Rooms",
     },
     {
-      src: "/api/placeholder/800/600",
-      alt: "Advanced Medical Equipment",
-      title: "Latest Medical Technology",
-    },
-    {
       src: Award,
       alt: "award ceremony",
       title: "award ceremony",
@@ -61,11 +56,16 @@ const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
         {trigger}
       </DialogTrigger>
       <DialogContent className="max-w-4xl w-full h-[80vh] p-0">
+        <DialogTitle className="sr-only">Clinic photo gallery</DialogTitle>
+        <DialogDescription className="sr-only">
+          Browse clinic and award ceremony photos using the previous and next image buttons.
+        </DialogDescription>
         <div className="relative w-full h-full bg-black rounded-lg overflow-hidden">
           <Button
             variant="ghost"
             size="sm"
             className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
+            aria-label="Close gallery"
             onClick={() => setIsOpen(false)}
           >
             <X className="w-4 h-4" />
@@ -90,6 +90,7 @@ const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
                   {images.map((_, index) => (
                     <button
                       key={index}
+                      aria-label={`View photo ${index + 1}`}
                       className={`w-2 h-2 rounded-full transition-colors ${
                         index === currentImage ? "bg-white" : "bg-white/40"
                       }`}
@@ -105,6 +106,7 @@ const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
             variant="ghost"
             size="sm"
             className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:bg-white/20"
+            aria-label="Previous image"
             onClick={prevImage}
           >
             <ChevronLeft className="w-6 h-6" />
@@ -114,6 +116,7 @@ const GalleryCarousel = ({ trigger }: { trigger: React.ReactNode }) => {
             variant="ghost"
             size="sm"
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:bg-white/20"
+            aria-label="Next image"
             onClick={nextImage}
           >
             <ChevronRight className="w-6 h-6" />

@@ -11,7 +11,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Calendar, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/heroImage.jpg";
+import HeroSlideshow from "@/components/HeroSlideshow";
 import endoscopyIcon from "@/assets/endoscopy-icon.png";
 import liverIcon from "@/assets/liver-icon.png";
 import safetyIcon from "@/assets/safety-icon.png";
@@ -52,47 +52,14 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative">
-      {/* Hero Image Background */}
-      <div
-        className="relative min-h-[600px] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}>
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-medical-green/20 to-transparent"></div>
-
-        <div className="relative container mx-auto px-4 py-20 flex items-center min-h-[40px]">
-          <div className="max-w-2xl text-white">
-            <h2 className="hidden md:block text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Expert Care for Your
-              <span className="block text-medical-accent">
-                Digestive Health
-              </span>
-            </h2>
-            <p className="hidden md:block text-xl mb-8 text-white/90 w-full md:w-2/3 lg:w-1/2">
-              Comprehensive gastroenterology and hepatology services with the
-              latest technology and compassionate care.
-            </p>
-            <div className="hidden md:block absolute top-90 left-40 transform -translate-x-1/2 -translate-y-1/2 flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+919019374419"
-                className="text-sm font-semibold text-medical-green hover:text-medical-green-dark transition-colors mt-6">
-                <Button
-                  size="lg"
-                  className="bg-medical-green hover:bg-medical-green-dark text-white px-8 py-3 text-lg flex items-center justify-center">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Book Appointment
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeroSlideshow />
 
       {/* Services Cards Overlay */}
       <div
         className="relative  -mt-42 z-10 backdrop-blur-md"
         style={{ backgroundColor: "rgba(132, 243, 208, 0.2)" }}>
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 py-8">
             {services.map((service, index) => (
               <React.Fragment key={index}>
                 <Card className="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
@@ -151,7 +118,7 @@ const HeroSection = () => {
       <div className="py-16 bg-medical-green-light/10">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-semibold text-foreground mb-4">
-            {">"} Schedule your appointment online
+            Call to book your appointment
           </h3>
 
           <a

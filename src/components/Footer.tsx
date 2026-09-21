@@ -1,8 +1,9 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import ClinicMap from "@/components/ClinicMap";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#009688] text-white py-16">
+    <footer id="contact" className="bg-slate-900 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Contact Info */}
@@ -64,6 +65,7 @@ const Footer = () => {
                 </div>
               </div> */}
             </div>
+            <ClinicMap />
           </div>
 
           {/* Services */}

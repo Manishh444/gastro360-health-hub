@@ -1,3 +1,5 @@
+import CentresSection from "@/components/CentresSection";
+import MobileActions from "@/components/MobileActions";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -12,14 +14,16 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <Navigation />
-      <main>
+      <main id="main-content">
         <HeroSection />
+        <CentresSection />
         <AboutSection />
         <WhyGastro360 />
         <ServicesSection />
         <TestimonialsSection />
       </main>
       <Footer />
+      <MobileActions />
     </div>
   );
 };

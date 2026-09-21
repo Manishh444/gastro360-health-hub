@@ -4,7 +4,8 @@ import { doctors } from "@/data/doctorData";
 
 const DoctorProfile = () => {
   return (
-    <div className="space-y-16">
+    <section id="doctors" className="space-y-16">
+      <h2 className="section-title">Our Doctors</h2>
       {doctors.map((doctor) => (
         <div
           key={doctor.id}
@@ -14,7 +15,7 @@ const DoctorProfile = () => {
             <img
               src={doctor.image}
               alt={doctor.name}
-              className="rounded-lg shadow-lg w-72 h-80 object-cover"
+              className="rounded-lg shadow-lg w-72 max-w-full h-80 object-cover"
             />
           </div>
 
@@ -85,7 +86,7 @@ const DoctorProfile = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 
