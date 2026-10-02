@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import WhyGastro360 from "@/components/WhyGastro360";
 import ServicesSection from "@/components/ServicesSection";
+import SpecialisedCareSections from "@/components/SpecialisedCareSections";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 
@@ -17,9 +17,9 @@ const Index = () => {
       <main id="main-content">
         <HeroSection />
         <CentresSection />
-        <AboutSection />
-        <WhyGastro360 />
+        <SpecialisedCareSections />
         <ServicesSection />
+        <AboutSection />
         <TestimonialsSection />
       </main>
       <Footer />

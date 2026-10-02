@@ -127,7 +127,13 @@ All colors MUST be HSL.
   .clinic-hero { @apply relative overflow-hidden bg-slate-900 text-white; }
   .eyebrow { @apply text-center text-sm uppercase tracking-widest font-semibold text-teal-800 mb-4; }
   .section-title { @apply text-center text-3xl sm:text-4xl font-semibold mb-6; }
-  .centre-card { @apply flex flex-col w-full rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-sm hover:border-teal-700; min-height: 270px; }
+  .care-finder { background: radial-gradient(circle at top left, rgba(94, 234, 212, .2), transparent 34%), linear-gradient(180deg, #f8fafc 0%, #ecfeff 100%); }
+  .care-card { @apply flex flex-col rounded-2xl border border-white/80 bg-white p-6 shadow-md transition-all duration-300; min-height: 315px; }
+  .care-card:hover { @apply border-teal-600 shadow-xl; transform: translateY(-4px); }
+  .care-icon, .section-icon { @apply inline-flex size-14 items-center justify-center rounded-2xl bg-teal-100 text-teal-800; }
+  .service-panel { @apply rounded-3xl border border-slate-200 bg-slate-50 p-7 sm:p-9; }
+  .procedure-card { @apply min-h-36 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-colors; }
+  .procedure-card:hover { @apply border-teal-600; }
   .mobile-actions { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; display: flex; background: #103247; color: white; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); }
   .mobile-actions a { flex: 1; text-align: center; padding: 12px 4px; font-weight: 600; }
   .skip-link { position: fixed; top: -100px; left: 16px; z-index: 100; background: white; padding: 12px; }

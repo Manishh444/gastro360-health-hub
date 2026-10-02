@@ -21,11 +21,11 @@ for (const url of urls) {
   }
 }
 const home = await readFile('dist/index.html', 'utf8');
-assert.equal((home.match(/class="centre-card /g) || []).length, 5);
+assert.equal((home.match(/class="care-card /g) || []).length, 5);
 assert.ok(home.includes('https://wa.me/919019374419'));
-for (const hash of ['home', 'about', 'centres', 'services', 'doctors', 'testimonials', 'contact']) assert.ok(home.includes(`id="${hash}"`));
+for (const hash of ['home', 'right-care', 'cnfm', 'comed', 'gastro-care', 'procedures', 'fibroscan', 'about', 'doctors', 'testimonials', 'contact']) assert.ok(home.includes(`id="${hash}"`));
 assert.ok((await readFile('dist/404.html', 'utf8')).includes('content="noindex"'));
-console.log('Static checks passed: eight HTML pages, metadata, five centres, contact actions, anchors and local assets/links.');
+console.log('Static checks passed: eight HTML pages, metadata, five care cards, contact actions, anchors and local assets/links.');
 
 assert.ok(home.includes('fetchpriority="high"'));
 assert.ok(home.includes('imagesrcset='));

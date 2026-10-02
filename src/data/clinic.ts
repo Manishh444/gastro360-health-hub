@@ -19,8 +19,8 @@ export const centres = [
 export const laboratoryServices: string[] = [];
 export const navigation = [
   { label: 'HOME', href: '/#home' }, { label: 'ABOUT', href: '/#about' },
-  { label: 'OUR CENTRES', href: '/#centres' }, { label: 'CONDITIONS', href: '/conditions/' },
-  { label: 'DIAGNOSTICS', href: '/diagnostics/' }, { label: 'SERVICES', href: '/#services' },
+  { label: 'OUR CENTRES', href: '/#right-care' }, { label: 'CONDITIONS', href: '/conditions/' },
+  { label: 'DIAGNOSTICS', href: '/diagnostics/' }, { label: 'SERVICES', href: '/#procedures' },
   { label: 'DOCTORS', href: '/#doctors' }, { label: 'REVIEWS', href: '/#testimonials' },
   { label: 'CONTACT', href: '/#contact' },
 ];

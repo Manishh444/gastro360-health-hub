@@ -51,12 +51,16 @@ export default function HeroSlideshow() {
           <p className="text-lg sm:text-2xl leading-relaxed text-slate-100 mt-6 max-w-xl">Digestive • Liver • Functional GI • Metabolic Health</p>
           <p className="text-base sm:text-lg text-slate-300 mt-4 max-w-lg">Specialist care and advanced diagnostics under one roof in Yelahanka.</p>
           <div className="flex flex-wrap gap-3 mt-7">
-            <a className="clinic-button bg-teal-700 gap-2" href={`tel:${clinic.phone}`}>Book Appointment <ArrowUpRight size={18} aria-hidden="true"/></a>
+            <a className="clinic-button bg-teal-700 gap-2" href={`tel:${clinic.phone}`}>Book an Appointment <ArrowUpRight size={18} aria-hidden="true"/></a>
             <a className="hero-call" href={`tel:${clinic.phone}`}><Phone size={17} aria-hidden="true"/> Call Now</a>
           </div>
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-200">
+            Gastroenterology <span aria-hidden="true">|</span> Hepatology <span aria-hidden="true">|</span> Endoscopy <span aria-hidden="true">|</span> Colonoscopy <span aria-hidden="true">|</span> Esophageal Manometry <span aria-hidden="true">|</span> Anorectal Manometry <span aria-hidden="true">|</span> FibroScan <span aria-hidden="true">|</span> GI Motility <span aria-hidden="true">|</span> Body Composition Analysis
+            <span className="block mt-2">Nutrition support for ulcerative colitis, Crohn&apos;s disease, IBS, IBD, constipation, diarrhoea &amp; weight management</span>
+          </p>
           <div className="mt-8 pt-5 border-t border-white/20">
             <p className="text-xs uppercase tracking-widest text-teal-200 mb-2">Five specialised centres. One clinic.</p>
-            <a className="inline-flex items-center gap-2 text-sm py-2 underline underline-offset-4" href="#centres">Explore our centres <ArrowRight size={16} aria-hidden="true"/></a>
+            <a className="inline-flex items-center gap-2 text-sm py-2 underline underline-offset-4" href="#right-care">Find the right care <ArrowRight size={16} aria-hidden="true"/></a>
           </div>
         </div>
         <div className="hero-poster-column">
@@ -79,6 +83,5 @@ export default function HeroSlideshow() {
         </div>
       </div>
     </div>
-    <div className="relative border-t border-white/15 bg-slate-950/30"><p className="container mx-auto px-4 py-4 text-center text-xs sm:text-sm leading-6 text-slate-200">Gastroenterology · Hepatology · Endoscopy · GI Motility · Nutrition · Metabolic Health</p></div>
   </div>;
 }
